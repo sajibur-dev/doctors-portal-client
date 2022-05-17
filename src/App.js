@@ -1,20 +1,21 @@
-import './App.css';
-import Navbar from './Pages/Shared/Navbar';
-import { Routes, Route, Link } from "react-router-dom";
-import Home from './Pages/Home/Home';
-import About from './Pages/About/About';
-import Login from './Pages/Login/Login';
-import Appointment from './Pages/Appointment/Appointment';
-import SignUp from './Pages/Login/SignUp';
-import RequireAuth from './Pages/Login/RequireAuth';
+import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+import About from './Pages/About/About';
+import Appointment from './Pages/Appointment/Appointment';
+import AddDoctor from './Pages/Dashboard/AddDoctor';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyAppointments from './Pages/Dashboard/MyAppointments';
-import MyReview from './Pages/Dashboard/MyReview';
 import MyHistory from './Pages/Dashboard/MyHistory';
+import MyReview from './Pages/Dashboard/MyReview';
 import Users from './Pages/Dashboard/Users';
+import Home from './Pages/Home/Home';
+import Login from './Pages/Login/Login';
 import RequireAdmin from './Pages/Login/RequireAdmin';
+import RequireAuth from './Pages/Login/RequireAuth';
+import SignUp from './Pages/Login/SignUp';
+import Navbar from './Pages/Shared/Navbar';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="review" element={<MyReview></MyReview>}></Route>
           <Route path="history" element={<MyHistory></MyHistory>}></Route>
           <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+          <Route path="addDoctor" element={<RequireAdmin><AddDoctor/></RequireAdmin>}></Route>
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
