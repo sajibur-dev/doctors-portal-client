@@ -1,7 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const DoctorRow = ({ docotor, index, refetch }) => {
+const DoctorRow = ({ docotor, index, refetch,setDeletingDoctor }) => {
   const { _id,name, specility, image } = docotor;
   const deleteDoctor = _id => {
       console.log(_id);
@@ -34,7 +34,7 @@ const DoctorRow = ({ docotor, index, refetch }) => {
       </td>
       <td>{name}</td>
       <td>{specility}</td>
-      <td> <label htmlFor="delete-modal"  className="btn  modal-button btn-xs btn-error" onClick={() => deleteDoctor(_id)}>Delete</label> </td>
+      <td> <label htmlFor="delete-modal"  className="btn  modal-button btn-xs btn-error" onClick={() => setDeletingDoctor(docotor)}>Delete</label> </td>
     </tr>
   );
 };

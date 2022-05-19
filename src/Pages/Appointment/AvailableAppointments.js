@@ -15,7 +15,7 @@ const AvailableAppointments = ({ date }) => {
     if(isLoading){
         return <Loading></Loading>
     }
-
+console.log('available',services);
     return (
         <div className='my-10'>
             <h4 className='text-xl text-secondary text-center my-12'>Available Appointments on {format(date, 'PP')}</h4>

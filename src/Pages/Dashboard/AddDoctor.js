@@ -12,9 +12,11 @@ const AddDoctor = () => {
     handleSubmit,
     reset
   } = useForm();
+
   const { data: services, isLoading } = useQuery("services", () =>
     fetch("http://localhost:5000/service").then((res) => res.json())
   );
+  
   const onSubmit = async (data) => {
     console.log(data);
     const image = data.image[0];
